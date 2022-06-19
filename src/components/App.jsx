@@ -1084,7 +1084,7 @@ class App extends Component {
                                                   chavePrivada={localStorage.getItem('chavePrivada')} 
                                                   chavePublica={localStorage.getItem('chavePublica')} 
                                                   atualizarChaves={this.atualizarChaves}/>}/>
-            <Route exact path="/files" render={() => <Files 
+            <Route exact path="/#!/files" render={() => <Files 
                                                   identificadorArquivo={this.identificadorArquivo}
                                                   downloadArquivo={this.downloadArquivo}
                                                   decripHashLink={this.decripHashLink}
@@ -1092,14 +1092,14 @@ class App extends Component {
                                                   capturaArquivo={this.capturaArquivo}
                                                   enviaArquivo={this.enviaArquivo}
                                                   account={this.state.account}/>} />
-            <Route exact path="/permFiles" render={() => <PermFiles 
+            <Route exact path="/#!/permFiles" render={() => <PermFiles 
                                                   identificadorArquivoPerm={this.identificadorArquivoPerm}
                                                   downloadArquivoPerm={this.downloadArquivoPerm}
                                                   decripHashLinkPerm={this.decripHashLinkPerm}
                                                   files={this.state.files}
                                                   perms={this.state.perms}
                                                   account={this.state.account}/>} />
-            <Route exact path="/perms" render={() => <Permissions 
+            <Route exact path="/#!/perms" render={() => <Permissions 
                                                   account={this.state.account}
                                                   perms={this.state.perms}
                                                   enviaPermissao={this.enviaPermissao}/>} />
