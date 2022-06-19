@@ -1,7 +1,8 @@
 import CriptDStorage from '../abis/CriptDStorage.json'
 import CriptDPermission from '../abis/CriptDPermission.json'
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+//import { BrowserRouter, HashRouter} from 'react-router-dom';
+import { HashRouter as Router, Switch, Route, HashRouter} from 'react-router-dom';
 import Web3 from 'web3';
 
 import Home from './Home'
@@ -14,6 +15,8 @@ import './App.css';
 const ipfsClient = require('ipfs-http-client')
 //Padrão
 const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' }) 
+
+//const Router = process.env.HOST_IPFS === 'true' ? HashRouter : BrowserRouter;
 
 class App extends Component {
 
@@ -1074,7 +1077,7 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
+      <Router hashType="hashbang">
         <Menu account={this.state.account} />
         <Switch>
             <Route exact path="/" render={() => <Home
