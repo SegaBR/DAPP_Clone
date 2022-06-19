@@ -1080,7 +1080,7 @@ class App extends Component {
       <Router hashType="hashbang">
         <Menu account={this.state.account} />
         <Switch>
-            <Route exact path="/" render={() => <Home
+            <Route exact path="/#!/" render={() => <Home
                                                   chavePrivada={localStorage.getItem('chavePrivada')} 
                                                   chavePublica={localStorage.getItem('chavePublica')} 
                                                   atualizarChaves={this.atualizarChaves}/>}/>
