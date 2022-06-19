@@ -14,16 +14,16 @@ const Menu = ({account}) => (
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="/">Home &nbsp;|</a>
+                    <a className="nav-link active" aria-current="page" href="/#!/">Home &nbsp;|</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="/files">Arquivos &nbsp;|</a>
+                    <a className="nav-link active" aria-current="page" href="/#!/files">Arquivos &nbsp;|</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="/permFiles">Arquivos com Permissão &nbsp;|</a>
+                    <a className="nav-link active" aria-current="page" href="/#!/permFiles">Arquivos com Permissão &nbsp;|</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="/perms">Permissões</a>
+                    <a className="nav-link active" aria-current="page" href="/#!/perms">Permissões</a>
                 </li>
             </ul>
         </div>
