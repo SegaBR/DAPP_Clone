@@ -2,8 +2,8 @@ import CriptDStorage from '../abis/CriptDStorage.json'
 import CriptDPermission from '../abis/CriptDPermission.json'
 import React, { Component } from 'react';
 //import { BrowserRouter, HashRouter} from 'react-router-dom';
-//import { HashRouter as Router, Switch, Route, HashRouter} from 'react-router-dom';
-import { HashRouter, Router, Route} from 'react-router-dom';
+import { HashRouter as Router, Switch, Route, HashRouter} from 'react-router-dom';
+//import { HashRouter, Router, Route, Switch} from 'react-router-dom';
 import Web3 from 'web3';
 
 import Home from './Home'
@@ -1078,13 +1078,14 @@ class App extends Component {
 
   render() {
     return (
-      <HashRouter hashType="hashbang">
+      <Router hashType="hashbang">
         <Menu account={this.state.account} />
-            <Route  path="/" render={() => <Home
+          <Switch>
+            <Route exact path="/" render={() => <Home
                                                   chavePrivada={localStorage.getItem('chavePrivada')} 
                                                   chavePublica={localStorage.getItem('chavePublica')} 
                                                   atualizarChaves={this.atualizarChaves}/>}/>
-            <Route  path="/files" render={() => <Files 
+            <Route exact path="/files" render={() => <Files 
                                                   identificadorArquivo={this.identificadorArquivo}
                                                   downloadArquivo={this.downloadArquivo}
                                                   decripHashLink={this.decripHashLink}
@@ -1092,18 +1093,19 @@ class App extends Component {
                                                   capturaArquivo={this.capturaArquivo}
                                                   enviaArquivo={this.enviaArquivo}
                                                   account={this.state.account}/>} />
-            <Route  path="/permFiles" render={() => <PermFiles 
+            <Route exact path="/permFiles" render={() => <PermFiles 
                                                   identificadorArquivoPerm={this.identificadorArquivoPerm}
                                                   downloadArquivoPerm={this.downloadArquivoPerm}
                                                   decripHashLinkPerm={this.decripHashLinkPerm}
                                                   files={this.state.files}
                                                   perms={this.state.perms}
                                                   account={this.state.account}/>} />
-            <Route  path="/perms" render={() => <Permissions 
+            <Route exact path="/perms" render={() => <Permissions 
                                                   account={this.state.account}
                                                   perms={this.state.perms}
                                                   enviaPermissao={this.enviaPermissao}/>} />
-      </HashRouter>
+          </Switch>
+      </Router>
     );
   }
 }
